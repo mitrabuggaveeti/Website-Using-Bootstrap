@@ -31,7 +31,7 @@
                     <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lgg"></span> Contact</a></li>
                 </ul>
                 <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
+                    <a id="loginBtn">
                     <span class="fa fa-sign-in"></span> Login</a>
                 </span>    
             </div>            
@@ -87,8 +87,7 @@
                   <img src="img/logo.png">
                 </div>
                 <div class="col col-sm-3 align-self-center">
-                    <a class="btn btn-warning btn-block" data-toggle="modal" data-target="#reserveModal">Reserve a Table</a>
-                    
+                    <a class="btn btn-warning btn-block" id="modBtn">Reserve a Table</a>         
                 </div>
             </div>
         </div>
@@ -321,6 +320,16 @@
         <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
         <script>
             $(document).ready(function(){
+
+                  $("#modBtn").click(function(){
+                        $("#reserveModal").modal('show');
+                });
+                
+                $("#loginBtn").click(function(){
+                        $("#loginModal").modal('show');
+                });
+                
+
                 $("#mycarousel").carousel( { interval: 2000 } );
                 $("#carouselButton").click(function(){
                 if ($("#carouselButton").children("span").hasClass('fa-pause')) {
